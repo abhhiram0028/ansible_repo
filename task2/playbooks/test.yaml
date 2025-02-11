@@ -1,0 +1,7 @@
+---
+- name: Test all 
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: task 1
+      

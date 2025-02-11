@@ -1,0 +1,132 @@
+--------------------------------------#############################################-------------------------------------------------
+Use Case 1: Managing a List of Servers with Dynamic Inventory
+
+Objective:
+Create a task that manages a list of servers and dynamically gathers some information about them, like their role or environment.
+
+REF: ../vars/vars1.yaml
+
+Task: Create an Ansible playbook that loops over the list of servers and:
+
+    Extracts the server name, IP address, and role.
+    Based on the environment (production/staging), generate a summary message indicating the environment and the role of the server.
+
+Ansible Modules to Use:
+
+    debug to output information.
+    loop to iterate over the list.
+
+
+--------------------------------------#############################################-------------------------------------------------
+
+Use Case 2: Filtering Data Based on Dictionary Keys
+
+Objective:
+Filter and extract specific values from a dictionary based on conditions.
+
+REF: ../vars/vars2.yaml
+
+
+Task Description:
+
+    Given the following dictionary of users with their attributes, create a playbook that:
+        Filters out users who are above a certain age (e.g., older than 30).
+        Creates a new list with the names of the filtered users.
+
+        The output should be a list of users who are older than 30.
+
+Ansible Modules to Use:
+
+    set_fact to store results.
+    selectattr to filter the list.
+    debug to show the filtered result.
+
+--------------------------------------#############################################-------------------------------------------------
+
+Use Case 3: Merging Dictionaries and Creating a Summary
+
+Objective:
+Merge multiple dictionaries and summarize data in a structured way.
+
+Task Description:
+
+    Task: Merge these dictionaries and create a summary report that lists the project name, owner, and budget, sorted by the budget in descending order.
+
+Ansible Modules to Use:
+
+    combine to merge the dictionaries.
+    sort to sort the dictionary values.
+    debug to output the sorted result.
+
+--------------------------------------#############################################-------------------------------------------------
+
+Use Case 4: Nested Data Manipulation
+
+Objective:
+Manipulate nested data structures (like nested lists or dictionaries).
+
+Task Description:
+
+    Given a list of dictionaries with nested information about students and their courses, create a task that:
+        Extracts the student name and the list of courses they are enrolled in.
+        Filters out students who are not enrolled in any courses.
+        Outputs the students who have at least one course enrolled.
+        
+        The output should list only students who are enrolled in at least one course.
+
+Ansible Modules to Use:
+
+    selectattr to filter students based on courses.
+    debug to show the filtered students.
+
+--------------------------------------#############################################-------------------------------------------------
+
+Use Case 5: Dynamic Data Creation and Update
+
+Objective:
+Dynamically create and update lists or dictionaries based on user input.
+
+Task Description:
+    Task: Create a new server entry and add it to the list dynamically, then update the role of one of the existing servers.
+
+    Expected Output:
+        Add a new server with the role "app."
+        Update the role of web1 to "app."
+
+Ansible Modules to Use:
+
+    set_fact to add new data to the list.
+    list to modify the existing list.
+    debug to output the final list.
+
+--------------------------------------#############################################-------------------------------------------------
+
+Use Case 6: Transforming a List into a Dictionary
+
+Objective:
+Transform a list of items into a dictionary and manipulate the result.
+
+Task Description:
+
+    Given a list of dictionaries with employee names and their salaries:
+      REF: ../vars/vars6.yaml 
+
+
+    Task: Convert the list of employees into a dictionary where the keys are the employee names, and the values are their salaries.
+
+Expected Output (converted dictionary):
+
+    employees_dict:
+      Alice: 50000
+      Bob: 60000
+      Charlie: 70000
+
+Ansible Modules to Use:
+
+    combine to convert lists to a dictionary.
+    debug to show the final dictionary.
+
+--------------------------------------#############################################-------------------------------------------------
+
+
+
