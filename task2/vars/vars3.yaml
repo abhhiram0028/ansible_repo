@@ -1,0 +1,8 @@
+project_a:
+  name: "Project Alpha"
+  owner: "Alice"
+  budget: 10000
+project_b:
+  name: "Project Beta"
+  owner: "Bob"
+  budget: 15000

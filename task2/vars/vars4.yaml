@@ -1,0 +1,14 @@
+students:
+  - name: John
+    courses:
+      - math
+      - physics
+  - name: Mary
+    courses: []
+  - name: Steve
+    courses:
+      - chemistry
+  - name: Anna
+    courses:
+      - biology
+      - history
