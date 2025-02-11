@@ -30,4 +30,9 @@
 
     - name: Status check
       ansible.builtin.debug:
-        msg: "{{ response }}"
+        msg: "{{ response.status_code }}"
+
+    - name: Ensure Response is HTTP 304
+      ansible.builtin.fail:
+        msg: "Apache did not return HTTP 302! Status: {{ response.status_code }}"
+      when: response.status_code is not defined or response.status_code != 304
