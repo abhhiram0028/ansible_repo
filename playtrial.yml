@@ -1,0 +1,39 @@
+---
+- name: Playbook
+  hosts: all
+  become: true
+  tasks:
+    - name: install apache2
+      ansible-builtin.apt:
+        name: apache2
+        state: present
+        enabled: yes
+
+    - name: open on port 3000
+      ansible.builtin.replace:
+        path: /etc/apache2/ports.conf
+        regexp: 'Listen 80'
+        replace: 'Listen 3000'
+
+    - name: Manage firewall
+      ansible.builtin.block:
+
+        - name: CHeck ufw status
+          ansible-builtin.command: ufw status | grep "Status: active"
+          register: checkstatus
+          changed_when: false
+          ignore_errors: true
+
+        - name: Open for port 3000
+          ansible.builtin.command: ufw allow 3000
+          when: checkstatus.rc == 0
+
+      ansible.builtin.rescue:
+        - name: ufw is inactive
+          debug:
+            msg: ufw inactive
+    
+    - name: Update index file
+      ansible.builtin.copy:
+        dest: /var/www/html/index.html
+        content: <h1>{{ ansible_hostname }}, {{ ansible_default_ipv4.address }}, 3000</h1>

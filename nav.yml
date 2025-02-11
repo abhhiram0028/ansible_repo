@@ -1,0 +1,33 @@
+- name: Testing
+  become: true
+  hosts: all
+  tasks:
+    - name: Install apache2
+      ansible.builtin.apt:
+        name: apache2
+        state: present
+
+    - name: Open on port 3000
+      ansible.builtin.replace:
+        path: /etc/apache2/ports.conf
+        regexp: 'Listen 80'
+        replace: 'Listen 3000'
+
+    - name: Open firewall for port 3000
+      ansible.builtin.command: ufw allow 3000
+
+    - name: Update the index file
+      ansible.builtin.copy:
+        content: <h1>{{ ansible_hostname }}, {{ ansible_default_ipv4.address }}, 3000</h1>
+        dest: /var/www/html/index.html
+
+    - name: Get request
+      ansible.builtin.get_url:
+        url: "http://{{ ansible_default_ipv4.address }}:3000"
+        dest: /var/www/html/index.html
+      register: response
+      ignore_errors: true
+
+    - name: Status check
+      ansible.builtin.debug:
+        msg: "{{ response }}"
