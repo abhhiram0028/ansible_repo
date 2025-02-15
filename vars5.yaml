@@ -1,0 +1,7 @@
+servers_5:
+  - name: web1
+    ip: 192.168.1.1
+    role: web
+  - name: db1
+    ip: 192.168.1.2
+    role: db

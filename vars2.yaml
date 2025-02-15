@@ -1,0 +1,13 @@
+users:
+  - name: Alice
+    age: 28
+    role: admin
+  - name: Bob
+    age: 35
+    role: developer
+  - name: Charlie
+    age: 40
+    role: manager
+  - name: Dave
+    age: 25
+    role: intern
