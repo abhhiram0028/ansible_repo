@@ -34,5 +34,5 @@
 
     - name: Ensure Response is HTTP 304
       ansible.builtin.fail:
-        msg: "304 fail. Status: {{ response.status_code }}"
-      when: response.status_code != 304
+        msg: "304 fail. Got: {{ response.status_code }}"
+      when: response.status_code != 304 
