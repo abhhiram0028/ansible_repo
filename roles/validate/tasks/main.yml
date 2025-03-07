@@ -1,10 +1,10 @@
-- name: Initialize missing variables list
+- name: Initialize variables list
   ansible.builtin.set_fact:
-    missing_vars: []
+    the_vars: []
 
 - name: Validate required variables
   ansible.builtin.set_fact:
-    missing_vars: "{{ missing_vars + [item.variable_name] }}"
+    the_vars: "{{ the_vars + [item.variable_name] }}"
   vars:
     status_of_var: "{{ lookup('ansible.builtin.vars', item.variable_name) }}"
   when: item.variable_required and (status_of_var | default('NA') == 'NA')
@@ -12,14 +12,13 @@
 
 - name: Validate dependent variables
   ansible.builtin.set_fact:
-    missing_vars: "{{ missing_vars + [item.variable_name] }}"
+    the_vars: "{{ the_vars + [item.variable_name] }}"
   vars:
     dependent: "{{ item.variable_dependent_on | selectattr('variable_name', 'in', vars.keys()) }}"
     status_of_var: "{{ lookup('ansible.builtin.vars', item.variable_name) }}"
-  when: >
-    item.variable_dependent and (status_of_var | default('NA') == 'NA')
+  when: item.variable_dependent and (status_of_var | default('NA') == 'NA')
   loop: "{{ var_input_variable }}"
 
-- name: Fail if required variables are missing
+- name: debug
   ansible.builtin.debug:
-    msg: "Missing required variables: {{ missing_vars }}"
+    msg: "{{ the_vars }}"
