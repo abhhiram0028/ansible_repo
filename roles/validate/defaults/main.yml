@@ -1,0 +1,21 @@
+var_input_variable:
+  - variable_name: variable_a
+    variable_required: true
+    variable_dependent: false
+    variable_dependent_on: []
+
+  - variable_name: variable_b
+    variable_required: false
+    variable_dependent: true
+    variable_dependent_on:
+      - variable_name: variable_a
+        at_value: 'I need A'
+
+  - variable_name: variable_c
+    variable_required: false
+    variable_dependent: true
+    variable_dependent_on:
+      - variable_name: variable_a
+        at_value: 'I need A'
+      - variable_name: variable_b
+        at_value: 'I need C'
