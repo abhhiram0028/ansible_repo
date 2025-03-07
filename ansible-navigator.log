@@ -859,3 +859,21 @@
 2025-02-08T19:07:07.180953+00:00 INFO 'ansible_navigator.main' Review the hints and log file to see what went wrong.
 2025-02-08T19:07:14.887354+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Execution environment pull failed
 2025-02-08T19:07:14.888203+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Error response from daemon: Get "https://ghcr.io/v2/": dial tcp: lookup ghcr.io on 127.0.0.53:53: server misbehaving
+2025-02-15T21:19:26.374334+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Execution environment pull failed
+2025-02-15T21:19:26.398603+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Error response from daemon: Get "https://ghcr.io/v2/": dial tcp: lookup ghcr.io on 127.0.0.53:53: server misbehaving
+2025-02-15T21:19:37.256657+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Execution environment pull failed
+2025-02-15T21:19:37.257637+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Error response from daemon: Get "https://ghcr.io/v2/": dial tcp: lookup ghcr.io on 127.0.0.53:53: server misbehaving
+2025-02-15T21:19:41.289304+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Execution environment pull failed
+2025-02-15T21:19:41.290148+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Error response from daemon: Get "https://ghcr.io/v2/": dial tcp: lookup ghcr.io on 127.0.0.53:53: server misbehaving
+2025-02-15T21:20:49.400646+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Execution environment pull failed
+2025-02-15T21:20:49.401510+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Error response from daemon: Get "https://ghcr.io/v2/": dial tcp: lookup ghcr.io on 127.0.0.53:53: server misbehaving
+2025-02-15T21:21:03.722317+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Execution environment pull failed
+2025-02-15T21:21:03.723160+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Error response from daemon: Get "https://ghcr.io/v2/": dial tcp: lookup ghcr.io on 127.0.0.53:53: server misbehaving
+2025-02-15T21:21:46.089892+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Execution environment pull failed
+2025-02-15T21:21:46.090883+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Error response from daemon: Get "https://ghcr.io/v2/": dial tcp: lookup ghcr.io on 127.0.0.53:53: server misbehaving
+2025-02-15T21:22:04.907239+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Execution environment pull failed
+2025-02-15T21:22:04.908231+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Error response from daemon: Get "https://ghcr.io/v2/": dial tcp: lookup ghcr.io on 127.0.0.53:53: server misbehaving
+2025-02-15T21:29:45.847884+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Execution environment pull failed
+2025-02-15T21:29:45.848788+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Error response from daemon: Get "https://ghcr.io/v2/": dial tcp: lookup ghcr.io on 127.0.0.53:53: server misbehaving
+2025-02-15T21:36:26.362554+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Execution environment pull failed
+2025-02-15T21:36:26.363477+00:00 ERROR 'ansible_navigator.image_manager.puller._log_message' Error response from daemon: Get "https://ghcr.io/v2/": dial tcp: lookup ghcr.io on 127.0.0.53:53: server misbehaving
