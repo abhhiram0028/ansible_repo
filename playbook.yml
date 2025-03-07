@@ -1,4 +1,4 @@
-- name: Validate Input Variables
+- name: Validate Variables
   hosts: localhost
   gather_facts: false
   roles:
